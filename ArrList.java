@@ -32,10 +32,12 @@ class ArrayList<T>{
         arr[s++] = item;
     }
 
+// get method for all data types
 //    Object get(int index){
 //        return arr[index];
 //    }
-    // get method
+    
+    // get method to make the list cater to only a specific type
     T get(int index){
         return (T)arr[index];
     }
