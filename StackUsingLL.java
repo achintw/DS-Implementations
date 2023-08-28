@@ -9,28 +9,28 @@ class Node {
 }
 
 class Stack {
-    private Node top;
+    private Node head;
 
     public Stack() {
-        this.top = null;
+        this.head = null;
     }
 
     public boolean isEmpty() {
-        return top == null;
+        return head == null;
     }
 
     public void push(int data) {
         Node newNode = new Node(data);
-        newNode.next = top;
-        top = newNode;
+        newNode.next = head;
+        head = newNode;
     }
 
     public int pop() {
         if (isEmpty()) {
             throw new RuntimeException("Stack is empty");
         }
-        int poppedData = top.data;
-        top = top.next;
+        int poppedData = head.data;
+        head = head.next;
         return poppedData;
     }
 
@@ -38,11 +38,11 @@ class Stack {
         if (isEmpty()) {
             throw new RuntimeException("Stack is empty");
         }
-        return top.data;
+        return head.data;
     }
 
     public void printStack() {
-        Node current = top;
+        Node current = head;
         while (current != null) {
             System.out.print(current.data + " -> ");
             current = current.next;
